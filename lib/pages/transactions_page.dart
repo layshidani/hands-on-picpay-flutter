@@ -31,7 +31,6 @@ class _TransactionsPageState extends State<TransactionsPage> {
 
   @override
   Widget build(BuildContext context) {
-
     return SafeArea(
       child: Scaffold(
         backgroundColor: const Color.fromRGBO(244, 244, 246, 1),
@@ -39,6 +38,13 @@ class _TransactionsPageState extends State<TransactionsPage> {
           title: const Text('Transações'),
           backgroundColor: const Color.fromRGBO(5, 24, 28, 1),
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: Icon(Icons.attach_money_outlined),
+          backgroundColor: Colors.green[700],
+        ),
+        floatingActionButtonLocation:
+            FloatingActionButtonLocation.miniCenterDocked,
         body: Column(
           children: [
             const SummaryWidget(),
@@ -47,13 +53,18 @@ class _TransactionsPageState extends State<TransactionsPage> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: List.generate(
-                    featRowItems.length, (index) => RowItemWidget(positon: index + 1, text: featRowItems[index]['text'], icon: featRowItems[index]['icon'], isNew: featRowItems[index]['isNew'])).toList(),
+                    featRowItems.length,
+                    (index) => RowItemWidget(
+                        positon: index + 1,
+                        text: featRowItems[index]['text'],
+                        icon: featRowItems[index]['icon'],
+                        isNew: featRowItems[index]['isNew'])).toList(),
               ),
             ),
             TableTransactionsWidget(),
           ],
         ),
-         bottomNavigationBar: BottomNavigationBar(
+        bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
@@ -64,7 +75,7 @@ class _TransactionsPageState extends State<TransactionsPage> {
               label: 'Extrato',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.attach_money_outlined),
+              icon: Icon(null),
               label: 'Cobrar',
             ),
             BottomNavigationBarItem(
@@ -89,8 +100,16 @@ class _TransactionsPageState extends State<TransactionsPage> {
 
   List featRowItems = [
     {'text': 'Pix', 'icon': Icon(Icons.construction_outlined), 'isNew': true},
-    {'text': 'Pagar Boletos', 'icon': Icon(Icons.construction_outlined), 'isNew': true},
-    {'text': 'Open Banking', 'icon': Icon(Icons.construction_outlined), 'isNew': true},
+    {
+      'text': 'Pagar Boletos',
+      'icon': Icon(Icons.construction_outlined),
+      'isNew': true
+    },
+    {
+      'text': 'Open Banking',
+      'icon': Icon(Icons.construction_outlined),
+      'isNew': true
+    },
   ];
 
   Future<String> fetchResume() async {
