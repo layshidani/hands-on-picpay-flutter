@@ -1,4 +1,4 @@
-# hands_on
+# dojo
 
 Um projeto para todos iniciarmos juntos o hands on
 

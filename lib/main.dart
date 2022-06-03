@@ -10,14 +10,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'HandsOn',
+        title: 'Dojo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
         home: SafeArea(
           child: Scaffold(
             appBar: AppBar(
-              title: const Text('HandsOn'),
+              title: const Text('Dojo'),
             ),
           ),
         ),
