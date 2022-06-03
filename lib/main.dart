@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hands_on/pages/transactions_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,16 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) => MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Dojo',
+        title: 'PicPay Empresas',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          backgroundColor: const Color.fromRGBO(5, 24, 28, 1),
         ),
-        home: SafeArea(
-          child: Scaffold(
-            appBar: AppBar(
-              title: const Text('Dojo'),
-            ),
-          ),
-        ),
+        home: const TransactionsPage(),
       );
 }
